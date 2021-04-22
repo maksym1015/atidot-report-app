@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-This project was deployed at here. [Atidot Report App](https://github.com/facebook/create-react-app).
+This project was deployed at here. [Atidot Report App](https://atidot-weekly-report.netlify.app/).
 
 Used Styled Components.
 
