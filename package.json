@@ -29,6 +29,7 @@
     "recharts": "^2.0.9",
     "sass": "^1.32.11",
     "styled-components": "^5.2.3",
+    "styled-components-media-query": "^1.0.15",
     "web-vitals": "^1.1.1"
   },
   "scripts": {

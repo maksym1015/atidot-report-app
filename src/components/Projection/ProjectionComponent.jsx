@@ -1,32 +1,32 @@
 import React from 'react';
-import { ShowPercent, ValueHeader, PercentNum, ShowValue, FlexColumn, FlexBetween, FlexBaseline } from '../styled.lib';
+import { ShowPercent, ValueHeader, PercentNum, ShowValue, Container } from '../styled.lib';
 
 const ProjectionComponent = (props) => {
   const value = props.value;
   const percent = props.percent;
   return (
-    <FlexBetween>
-      <FlexColumn>
+    <Container justify={props.type === 'paid' ? "space-around" : "space-between"}>
+      <Container column>
         <ValueHeader>Me</ValueHeader>
-        <FlexBaseline>
+        <Container align="baseline">
           <ShowValue color="normal">{value[0]}</ShowValue>
           <ShowPercent variant="up" />
           <PercentNum variant="up">{percent[0]}</PercentNum>
-        </FlexBaseline>
-      </FlexColumn>
-      <FlexColumn>
+        </Container>
+      </Container>
+      <Container column>
         <ValueHeader>Benchmark avg.</ValueHeader>
-        <FlexBaseline>
+        <Container align="baseline">
           <ShowValue color="normal">{value[1]}</ShowValue>
           <ShowPercent variant="up" />
           <PercentNum variant="up">{percent[1]}</PercentNum>
-        </FlexBaseline>
-      </FlexColumn>
-      <FlexColumn>
+        </Container>
+      </Container>
+      <Container column>
         <ValueHeader>{props.title}</ValueHeader>
         <ShowValue color="down">{value[2]}</ShowValue>
-      </FlexColumn>
-    </FlexBetween>
+      </Container>
+    </Container>
   )
 }
 

@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
 
+
+
 const percentStatus = {
   up: {
     borderBottom: 'clamp(7px, 15 / 2480 * 100vw, 15px) solid #47c70e',
@@ -36,7 +38,7 @@ const colorStatus = {
   }
 }
 
-const ValueHeader = styled.span(
+const ValueHeader = styled.p(
   {
     fontSize: 'clamp(18px, 32 / 2480 * 100vw, 32px)',
     fontWeight: '400',
@@ -71,20 +73,6 @@ const PercentNum = styled.p(
   ({variant}) => colorStatus[variant],
 )
 
-const FlexColumn = styled.div({
-  display: 'flex',
-  flexDirection: 'column',
-})
-
-const FlexBetween = styled.div({
-  display: 'flex',
-  justifyContent: 'space-between',
-})
-
-const FlexBaseline = styled.div({
-  display: 'flex',
-  alignItems: 'baseline',
-})
 
 const liStatus = {
   key: {
@@ -114,4 +102,68 @@ const Circle = styled.span(
   ({color}) => colorStatus[color],
 )
 
-export {ShowPercent, ValueHeader, PercentNum, ShowValue, FlexColumn, FlexBetween, FlexBaseline, Li, Circle}
+const Container = styled.div(
+  {
+    display: 'flex',
+  },
+  props => ({
+    flexDirection: props.column && 'column',
+    justifyContent: props.justify,
+    alignItems: props.align,
+    textAlign: props.txtCenter && 'center',
+    backgroundColor: props.type === 'paid' && 'rgba(223, 236, 243, 0.36);',
+    border: props.type === 'paid' && '1px solid #b0cbd9',
+  }
+))
+
+const Button = styled.button`
+  width: 169px;
+  height: 47px;
+  padding: 6px 16px 7px 17px;
+  border-radius: 6px;
+  border: solid 2px #3384af;
+  background-color: #3384af;
+  color: #ffffff;
+`
+
+const OutlineButton = styled(Button)`
+  background-color: #ffffff;
+  color: #3384af;
+`
+// const Period = styled.p(
+//   {
+//     color: '#6c6b68',
+//   },
+//   props => ({
+//     fontSize: props.size === 'big' ? '52px' : '18px',
+//     fontFamily: props.size === 'big' ? "Poppins" : "Open Sans",
+//     fontWeight: props.size === 'big' ? '300' : '400'
+// }))
+
+const ptagStyle = {
+  period: {
+    color: '#6c6b68',
+
+  },
+  content: {
+    color: 'black',
+    fontSize: '38px',
+    fontWeight: '400',
+    lineHeight: '1.26',
+    },
+  comment: {
+    color: 'black',
+    fontSize: '28px',
+  }
+}
+
+const P = styled.p(
+  {
+    color: 'black',
+
+  },
+  ({variant}) => ptagStyle[variant],
+)
+
+
+export {ShowPercent, ValueHeader, PercentNum, ShowValue, Li, Circle, Container, P, Button, OutlineButton}

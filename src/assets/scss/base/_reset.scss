@@ -40,10 +40,16 @@ a,
 button,
 .btn {
   cursor: pointer;
-  text-decoration: none;
   transition: all 0.3s ease-in-out;
 }
-
+a {
+  font-family: 'Poppins';
+  color: #3384af;
+  text-decoration: underline;
+}
+button {
+  font-family: 'Open Sans';
+}
 img {
   max-width: 100%;
 }
@@ -70,7 +76,4 @@ span {
   font-style: normal;
   line-height: normal;
   letter-spacing: normal;
-}
-a {
-  font-family: 'Poppins';
 }

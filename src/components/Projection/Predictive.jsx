@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { ValueHeader, FlexColumn, FlexBetween, Li, Circle } from '../../components/styled.lib';
+import { ValueHeader, Container, Li, Circle } from '../../components/styled.lib';
 import ChartComponent from '../ChartComponent';
 
 const Predictive = (props) => {
@@ -16,19 +16,19 @@ const Predictive = (props) => {
   );
   return (
     <div className="col-md-6">
-      <FlexBetween>
-        <FlexColumn>
+      <Container justify="space-between">
+        <Container column>
           <ValueHeader><i className="material-icons"></i>Key Predictive Drivers</ValueHeader>
-          <FlexBetween>
+          <Container justify="space-between">
             <ChartComponent />
             <ul>{keyItems}</ul>
-          </FlexBetween>
-        </FlexColumn>
-        <FlexColumn>
+          </Container>
+        </Container>
+        <Container column>
           <ValueHeader>Impact on gap</ValueHeader>
           <ul>{gapItems}</ul>
-        </FlexColumn>
-      </FlexBetween>
+        </Container>
+      </Container>
     </div>
   )
 }

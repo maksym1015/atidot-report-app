@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { FlexBetween } from './styled.lib';
+import { Container } from './styled.lib';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/scss/app.scss';
 import reportLogo from '../assets/img/Image 6.png';
@@ -9,12 +9,12 @@ import logo from '../assets/img/Image 7.png';
 const Base = (props) => (
   <>
     <header>
-      <FlexBetween>
+      <Container justify="space-between">
           <h1>Weekly Predictive <br/>Performance Report</h1>
           <a href="/">
             <img className="reportLogo" src={reportLogo} srcSet="img/image-6@2x.png 2x, img/image-6@3x.png 3x" alt="Atidot Report Logo"/>
           </a>
-      </FlexBetween>
+      </Container>
     </header>  
     <main>
       {props.children}

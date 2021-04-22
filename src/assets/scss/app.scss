@@ -15,11 +15,14 @@ main {
   .col-md-6 {
     padding: 0 20px;
   }
+  section {
+    margin-top: 85px;
+    @include mq('phone') {
+      margin-top: 35px;
+    }
+  }
   .section-performance {
     margin-bottom: get-vw(85);
-    .title {
-      margin-right: get-vw(24);
-    }
     .recharts-wrapper {
       margin-top: get-vw(20);
     }
@@ -45,7 +48,6 @@ main {
       letter-spacing: normal;
       text-align: left;
       color: #3384af;
-      cursor: pointer;
       &:hover {
         color: #0f4968;
         text-decoration: underline;
@@ -53,25 +55,24 @@ main {
       }
     }
   }
-  .period {
-    font-family: "Poppins";
-    font-size: 52px;
-    font-weight: 300;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: normal;
-    letter-spacing: normal;
-    text-align: left;
-    color: #6c6b68;
-    @include mq("tablet") {
-      font-size: 28px;
-    }
-    @include mq("phone") {
-      font-size: 22px;
-    }
+}
+.period {
+  font-family: "Poppins";
+  font-size: 52px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #6c6b68;
+  @include mq("tablet") {
+    font-size: 28px;
+  }
+  @include mq("phone") {
+    font-size: 22px;
   }
 }
-
 .reportLogo {
   width: get-vw(498);
   height: get-vw(57);

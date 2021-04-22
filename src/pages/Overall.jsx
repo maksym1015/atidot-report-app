@@ -3,15 +3,16 @@ import React from 'react';
 
 import BaseComponent from '../components/BaseComponent';
 import PerformanceComponent from '../components/PerformanceComponent';
+import InsightComponent from '../components/TopInsights';
+import { P } from '../components/styled.lib';
 
 const Overall = () => (
   <BaseComponent>
-    <p className="period">Feb' 1 - Mar' 1, 2021</p>    
-    <h2>Overall performance</h2>
+    <P size="big">Feb' 1 - Mar' 1, 2021</P> 
 
     <PerformanceComponent />
-
-    <section className=""></section>
+    <InsightComponent />
+    {/* <InsightComponent /> */}
   </BaseComponent>
 );
 
