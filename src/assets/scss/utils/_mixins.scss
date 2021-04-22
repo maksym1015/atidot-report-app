@@ -1,0 +1,49 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+@function get-vw($width) {
+  $base-vw: 2480;
+  @return $width / $base-vw * 100vw;
+}
+
+@mixin mq($width, $type: min) {
+  @if map_has_key($breakpoints, $width) {
+    $width: map_get($breakpoints, $width);
+    @if ($type == min) {
+      $width: $width + 1px;
+    }
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
+  }
+}
+
+@mixin heading1() {
+  font-size: 80px;
+  font-weight: 800;
+  line-height: 1.25;
+  @include mq("phone") {
+    font-size: 45px;
+    line-height: 48px;
+  }
+}
+@mixin heading2() {
+  font-size: 55px;
+  font-weight: 600;
+  line-height: normal;
+  @include mq("phone") {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+@mixin heading3() {
+  font-size: 45px;
+  font-weight: 500;
+  line-height: 1.23;
+  @include mq("phone") {
+    font-size: 27px;
+    line-height: 40px;
+  }
+}
+
+

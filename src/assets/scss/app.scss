@@ -1,0 +1,93 @@
+@import "utils/variables";
+@import "utils/mixins";
+@import "base/reset";
+@import "base/typography";
+
+main {
+  h2 {
+    margin-top: get-vw(85);
+  }
+  h3 {
+    margin-top: get-vw(25);
+    margin-bottom: get-vw(20);
+    margin-right: get-vw(23);
+  }
+  .col-md-6 {
+    padding: 0 20px;
+  }
+  .section-performance {
+    margin-bottom: get-vw(85);
+    .title {
+      margin-right: get-vw(24);
+    }
+    .recharts-wrapper {
+      margin-top: get-vw(20);
+    }
+    .label-top {
+      color: #f22736;
+      font-size: clamp(16px, 30/2480*100vw, 30px);
+      text-align: center;
+      transform: translateY(-9px);
+    }
+    .label-bottom {
+      color: #f22736;
+      font-size: clamp(16px, 30/2480*100vw, 30px);
+      text-align: center;
+      transform: translateY(9px);
+    }
+    .link-style {
+      font-family: Poppins;
+      font-size: clamp(14px, 28/2480*100vw, 28px);
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.23;
+      letter-spacing: normal;
+      text-align: left;
+      color: #3384af;
+      cursor: pointer;
+      &:hover {
+        color: #0f4968;
+        text-decoration: underline;
+        transition: all .2s ease-in-out;
+      }
+    }
+  }
+  .period {
+    font-family: "Poppins";
+    font-size: 52px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #6c6b68;
+    @include mq("tablet") {
+      font-size: 28px;
+    }
+    @include mq("phone") {
+      font-size: 22px;
+    }
+  }
+}
+
+.reportLogo {
+  width: get-vw(498);
+  height: get-vw(57);
+}
+.logo {
+  width: get-vw(184);
+  height: get-vw(55);
+}
+.logo-text {
+  margin-right: get-vw(18);
+  color: #09095b;
+  font-size: clamp(10px, 16 / 2480 * 100vw, 16px);
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: right;
+}
