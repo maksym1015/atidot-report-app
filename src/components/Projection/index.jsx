@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { Container } from '../styled.lib';
+import { Container } from '../styles/styled.lib';
 import Compare from './Compare';
 import Predictive from './Predictive'
-import { title, subTitle, value, percent, keys, gaps } from '../fakeData';
+import { title, subTitle, value, percent, keys, gaps } from '../../fakeData';
 import ProjectionComponent from './ProjectionComponent';
 
 const Projection = (props) => {

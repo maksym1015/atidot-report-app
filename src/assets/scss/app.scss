@@ -3,6 +3,11 @@
 @import "base/reset";
 @import "base/typography";
 
+.reportLogo {
+  width: get-vw(498);
+  height: get-vw(57);
+}
+
 main {
   h2 {
     margin-top: get-vw(85);
@@ -56,39 +61,23 @@ main {
     }
   }
 }
-.period {
-  font-family: "Poppins";
-  font-size: 52px;
-  font-weight: 300;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: left;
-  color: #6c6b68;
-  @include mq("tablet") {
-    font-size: 28px;
+
+footer {
+  margin-top: get-vw(100);
+  .logo {
+    width: get-vw(184);
+    height: get-vw(55);
   }
-  @include mq("phone") {
-    font-size: 22px;
+  .logo-text {
+    margin-right: get-vw(18);
+    color: #09095b;
+    font-size: clamp(10px, 16 / 2480 * 100vw, 16px);
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    text-align: right;
   }
 }
-.reportLogo {
-  width: get-vw(498);
-  height: get-vw(57);
-}
-.logo {
-  width: get-vw(184);
-  height: get-vw(55);
-}
-.logo-text {
-  margin-right: get-vw(18);
-  color: #09095b;
-  font-size: clamp(10px, 16 / 2480 * 100vw, 16px);
-  font-weight: 600;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.25;
-  letter-spacing: normal;
-  text-align: right;
-}
+

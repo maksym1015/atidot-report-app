@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { ValueHeader, Container, Li, Circle } from '../../components/styled.lib';
+import { ValueHeader, Container, Li, Circle } from '../styles/styled.lib';
 import ChartComponent from '../ChartComponent';
 
 const Predictive = (props) => {

@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
-
-
+import * as mq from './media-queries';
 
 const percentStatus = {
   up: {
@@ -66,13 +65,12 @@ const ShowValue = styled.p(
   ({color}) => colorStatus[color],
 )
 
-const PercentNum = styled.p(
+const PercentNum = styled.span(
   {
     fontSize: 'clamp(18px, 32 / 2480 * 100vw, 32px)',
   },
   ({variant}) => colorStatus[variant],
 )
-
 
 const liStatus = {
   key: {
@@ -124,46 +122,87 @@ const Button = styled.button`
   border: solid 2px #3384af;
   background-color: #3384af;
   color: #ffffff;
+  fontSize: 25px;
+  &:hover {
+    background-color: white;
+    color: #3384af;
+    font-weight: bold;
+    transition: all .3s ease-in-out;
+  }
+  @media (max-width: 991px) {
+    width: 132px;
+    height: 40px;
+    font-size: 16px !important;
+  }
+  @media (min-width: 991px) and (max-width: 1441px) {
+    width: 142px;
+    height: 40px;
+    font-size: 18px !important;
+  }
 `
 
 const OutlineButton = styled(Button)`
   background-color: #ffffff;
   color: #3384af;
+  &:hover {
+    background-color: #3384af;
+    color: #ffffff;
+  }
 `
-// const Period = styled.p(
-//   {
-//     color: '#6c6b68',
-//   },
-//   props => ({
-//     fontSize: props.size === 'big' ? '52px' : '18px',
-//     fontFamily: props.size === 'big' ? "Poppins" : "Open Sans",
-//     fontWeight: props.size === 'big' ? '300' : '400'
-// }))
-
 const ptagStyle = {
   period: {
     color: '#6c6b68',
-
+    lineHeight: '2.06',
+    fontSize: '18px',
+    [mq.small]: {
+      fontSize: '12px'
+    },
+    [mq.medium]: {
+      fontSize: '14px'
+    },
+  },
+  periodT: {
+    color: '#6c6b68',
+    lineHeight: 'normal',
+    fontSize: '52px',
+    [mq.small]: {
+      fontSize: '28px'
+    },
+    [mq.medium]: {
+      fontSize: '30px'
+    },
   },
   content: {
     color: 'black',
     fontSize: '38px',
     fontWeight: '400',
     lineHeight: '1.26',
+    [mq.small]: {
+      fontSize: '22px'
     },
+    [mq.medium]: {
+      fontSize: '24px'
+    },
+  },
   comment: {
     color: 'black',
     fontSize: '28px',
+    lineHeight: '1.36',
+    [mq.small]: {
+      fontSize: '16px'
+    },
+    [mq.medium]: {
+      fontSize: '18px'
+    },
   }
 }
 
-const P = styled.p(
+const Text = styled.p(
   {
     color: 'black',
-
   },
-  ({variant}) => ptagStyle[variant],
+  ({type}) => ptagStyle[type],
 )
 
 
-export {ShowPercent, ValueHeader, PercentNum, ShowValue, Li, Circle, Container, P, Button, OutlineButton}
+export {ShowPercent, ValueHeader, PercentNum, ShowValue, Li, Circle, Container, Text, Button, OutlineButton}

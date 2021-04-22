@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShowPercent, ValueHeader, PercentNum, ShowValue, Container } from '../styled.lib';
+import { ShowPercent, ValueHeader, PercentNum, ShowValue, Container } from '../styles/styled.lib';
 
 const ProjectionComponent = (props) => {
   const value = props.value;
