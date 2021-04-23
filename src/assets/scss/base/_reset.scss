@@ -28,10 +28,7 @@ body {
 .container {
   margin: 0 auto;
   padding: 0;
-  max-width: 1430px;
-  @include mq("desktop-xwide") {
-    max-width: 1980px;
-  }
+  max-width: 1980px;
 }
 
 .col-md-4 {
