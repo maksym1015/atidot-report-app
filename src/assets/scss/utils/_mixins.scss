@@ -19,30 +19,27 @@
 }
 
 @mixin heading1() {
-  font-size: 80px;
+  font-size: 45px;
   font-weight: 800;
   line-height: 1.25;
-  @include mq("phone") {
-    font-size: 45px;
-    line-height: 48px;
+  @include mq("desktop-xwide") {
+    font-size: 80px;
   }
 }
 @mixin heading2() {
-  font-size: 55px;
+  font-size: 32px;
   font-weight: 600;
   line-height: normal;
-  @include mq("phone") {
-    font-size: 32px;
-    line-height: 40px;
+  @include mq("desktop-xwide") {
+    font-size: 55px;
   }
 }
 @mixin heading3() {
-  font-size: 45px;
+  font-size: 25px;
   font-weight: 500;
-  line-height: 1.23;
-  @include mq("phone") {
-    font-size: 27px;
-    line-height: 40px;
+  line-height: 1.24;
+  @include mq("desktop-xwide") {
+    font-size: 45px;
   }
 }
 

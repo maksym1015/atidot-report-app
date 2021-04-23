@@ -4,8 +4,12 @@
 @import "base/typography";
 
 .reportLogo {
-  width: get-vw(498);
-  height: get-vw(57);
+  width: 210px;
+  height: 35px;
+  @include mq('desktop-xwide') {
+    width: 498px;
+    height: 57px;
+  }
 }
 
 main {
@@ -26,38 +30,30 @@ main {
       margin-top: 35px;
     }
   }
-  .section-performance {
-    margin-bottom: get-vw(85);
-    .recharts-wrapper {
-      margin-top: get-vw(20);
+  .label-top {
+    color: #f22736;
+    font-size: clamp(16px, 30/2480*100vw, 30px);
+    text-align: center;
+    transform: translateY(-9px);
+  }
+  .label-bottom {
+    color: #f22736;
+    font-size: clamp(16px, 30/2480*100vw, 30px);
+    text-align: center;
+    transform: translateY(9px);
+  }
+  .link-style {
+    font-family: Poppins;
+    font-weight: 500;
+    line-height: 1.23;
+    color: #3384af;
+    &:hover {
+      color: #0f4968;
+      text-decoration: underline;
+      transition: all .2s ease-in-out;
     }
-    .label-top {
-      color: #f22736;
-      font-size: clamp(16px, 30/2480*100vw, 30px);
-      text-align: center;
-      transform: translateY(-9px);
-    }
-    .label-bottom {
-      color: #f22736;
-      font-size: clamp(16px, 30/2480*100vw, 30px);
-      text-align: center;
-      transform: translateY(9px);
-    }
-    .link-style {
-      font-family: Poppins;
-      font-size: clamp(14px, 28/2480*100vw, 28px);
-      font-weight: 500;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.23;
-      letter-spacing: normal;
-      text-align: left;
-      color: #3384af;
-      &:hover {
-        color: #0f4968;
-        text-decoration: underline;
-        transition: all .2s ease-in-out;
-      }
+    @include mq('desktop-xwide') {
+      font-size: 28px;
     }
   }
 }
@@ -65,8 +61,12 @@ main {
 footer {
   margin-top: get-vw(100);
   .logo {
-    width: get-vw(184);
-    height: get-vw(55);
+    width: 123px;
+    height: 35px;
+    @include mq('desktop-xwide') {
+      width: 184px;
+      height: 55px;
+    }
   }
   .logo-text {
     margin-right: get-vw(18);

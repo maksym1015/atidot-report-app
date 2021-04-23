@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Text, Button, PercentNum } from './styles/styled.lib';
+import { Text, Button, PercentValue } from './styles/styled.lib';
 
 const Insight = ({ period, content, comment }) => {
   return (
@@ -9,9 +9,9 @@ const Insight = ({ period, content, comment }) => {
       <Text type="content">New high growth potential for Distributor A in Term</Text>
       <Text type="comment" className="mt-3">
         <a href="/" className="link-style">Distributor A</a> 
-          has positive growth potential 
-        (<PercentNum variant="up">50%</PercentNum>) in 
-        <a href="/" className="link-style">Term</a> submission for 
+          has positive growth potential 
+        (<PercentValue variant="up">50%</PercentValue>) in 
+        <a href="/" className="link-style">Term</a> submission for&nbsp; 
         <a href="/" className="link-style">36-40 y/o male</a>
       </Text>
       <Button className="mt-4">Learn more</Button>

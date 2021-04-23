@@ -1,48 +1,36 @@
 import React from 'react';
-import { LineChart, Line, CartesianGrid, XAxis, YAxis, ResponsiveContainer, Pie, PieChart, Label, Cell } from 'recharts';
+import { LineChart, Line, CartesianGrid, XAxis, YAxis, ResponsiveContainer, Pie, PieChart, Label, Cell, Tooltip, Area } from 'recharts';
 
 const dataLine = [
   {
-    "name": "Page A",
-    "uv": 4000,
-    "pv": 2400,
+    "name": "Nov",
+    "uv": 555,
+    "pv": 333,
     "amt": 2400
   },
   {
-    "name": "Page B",
-    "uv": 3000,
-    "pv": 1398,
+    "name": "Dec",
+    "uv": 666,
+    "pv": 555,
     "amt": 2210
   },
   {
-    "name": "Page C",
-    "uv": 2000,
-    "pv": 9800,
+    "name": "Jan",
+    "uv": 888,
+    "pv": 567,
     "amt": 2290
   },
   {
-    "name": "Page D",
-    "uv": 2780,
-    "pv": 3908,
+    "name": "Feb",
+    "uv": 999,
+    "pv": 777,
     "amt": 2000
   },
   {
-    "name": "Page E",
-    "uv": 1890,
-    "pv": 4800,
+    "name": "Mar",
+    "uv": 876,
+    "pv": 654,
     "amt": 2181
-  },
-  {
-    "name": "Page F",
-    "uv": 2390,
-    "pv": 3800,
-    "amt": 2500
-  },
-  {
-    "name": "Page G",
-    "uv": 3490,
-    "pv": 4300,
-    "amt": 2100
   }
 ]
 const COLORS = ['#265b85', '#3384af', '#66bcea', '#e0e1de'];
@@ -68,13 +56,16 @@ const dataPie = [
 const ChartComponent = (props) => {
   const type = props.type;
   return (
-    <ResponsiveContainer width={type === 'line' ? "100%" : "50%"} height={150}>
+    <ResponsiveContainer width={type === 'line' ? "100%" : "25%"} height={188}>
     { type === 'line' ? 
       <LineChart data={dataLine} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
-        <Line type="monotone" dataKey="uv" stroke="#8884d8" />
+        <Line type="linear" dataKey="uv" stroke="#dea831" />
+        <Line type="linear" enableArea="true" dataKey="pv" stroke="#3384af" />
         <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
         <XAxis dataKey="name" />
         <YAxis />
+        <Tooltip />
+        <Area type="monotone" dataKey="pv" stroke="rgba(51, 132, 175, 0.15)" fillOpacity={1} fill="url(#colorPv)" />
       </LineChart>
       :
       <PieChart>
@@ -82,8 +73,8 @@ const ChartComponent = (props) => {
           data={dataPie}
           nameKey="name"
           dataKey="value"
-          innerRadius="60%"
-          outerRadius="80%">
+          innerRadius="70%"
+          outerRadius="100%">
           {
             dataPie.map((entry, index) => <Cell key={entry.name} fill={ COLORS[index % COLORS.length] }/>)
           }

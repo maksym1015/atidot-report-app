@@ -14,7 +14,7 @@ const Projection = (props) => {
       <Container column txtCenter type="paid" className="mt-5">
         <h3>{title[type]}</h3>
         <ProjectionComponent title={subTitle[type]} value={value[type]} percent={percent[type]} type={type} />
-        <a href="/" className="link-style mt-4 mb-3">Show Details</a>
+        <a href="/" className="link-style mt-2 mb-4">Show Details</a>
       </Container>
       :
       <>

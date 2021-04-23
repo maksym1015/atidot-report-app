@@ -26,5 +26,11 @@ const gaps = {
   application: ['16% (35 apps)', '5% (12 apps)', '4% (11 apps)', '7% (24 apps)'],
   premium: ['36% ($1.63M)', '34% ($1.52M)', '24% ($1.3M)', '16% ($762k)']
 }
+// const insights = {
+//   top: [
+    
+//   ]
+// }
+
 
 export { title, subTitle, value, percent, keys, gaps }

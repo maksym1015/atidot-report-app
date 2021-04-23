@@ -10,10 +10,10 @@ const Base = (props) => (
   <>
     <header>
       <Container justify="space-between">
-          <h1>Weekly Predictive <br/>Performance Report</h1>
-          <a href="/">
-            <img className="reportLogo" src={reportLogo} srcSet="img/image-6@2x.png 2x, img/image-6@3x.png 3x" alt="Atidot Report Logo"/>
-          </a>
+        <h1>Weekly Predictive <br/>Performance Report</h1>
+        <a href="/">
+          <img className="reportLogo" src={reportLogo} alt="Atidot Report Logo"/>
+        </a>
       </Container>
     </header>  
     <main>
@@ -25,7 +25,7 @@ const Base = (props) => (
           POWERED<br/>BY
         </p>
         <a href="atidot.com">
-          <img className="logo" src={logo} srcSet="img/image-7@2x.png 2x, img/image-7@3x.png 3x" alt="Atidot Logo"/>
+          <img className="logo" src={logo} alt="Atidot Logo"/>
         </a>
       </Container>
     </footer> 

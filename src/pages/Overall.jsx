@@ -11,8 +11,8 @@ const Overall = () => (
     <Text type="periodT">Feb' 1 - Mar' 1, 2021</Text> 
 
     <PerformanceComponent />
-    <InsightComponent />
-    <InsightComponent />
+    <InsightComponent type="Top"/>
+    <InsightComponent type="Industry"/>
   </BaseComponent>
 );
 

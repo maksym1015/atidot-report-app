@@ -3,21 +3,27 @@ import * as mq from './media-queries';
 
 const percentStatus = {
   up: {
-    borderBottom: 'clamp(7px, 15 / 2480 * 100vw, 15px) solid #47c70e',
+    borderBottom: '10px solid #47c70e',
+    [mq.large]: {
+      borderBottom: '15px solid #47c70e'
+    },
   },
   down: {
-    borderTop: 'clamp(7px, 15 / 2480 * 100vw, 15px) solid #f22736',
+    borderTop: '10px solid #f22736',
+    [mq.large]: {
+      borderTop: '15px solid #47c70e'
+    },
   },
 }
 
-const colorStatus = {
-  up: {
+const colors = {
+  green: {
     color: '#47c70e',
   },
-  down: {
+  red: {
     color: '#f22736',
   },
-  normal: {
+  black: {
     color: 'black',
   },
   yellow: {
@@ -37,39 +43,108 @@ const colorStatus = {
   }
 }
 
+const headerSize = {
+  small: {
+    fontSize: '20px',
+    [mq.large]: {
+      fontSize: '32px',
+    }
+  },
+  big: {
+    fontSize: '24px',
+    [mq.large]: {
+      fontSize: '39px',
+    }
+  }
+}
+
 const ValueHeader = styled.p(
   {
-    fontSize: 'clamp(18px, 32 / 2480 * 100vw, 32px)',
     fontWeight: '400',
-    display: 'flex',
-    alignItems: 'center'
-  }
+  },
+  ({size}) => headerSize[size],
 )
 
-const ShowPercent = styled.div(
-  {
+const CurrentStatus = styled.div({
     width: 0,
     height: 0,
-    borderLeft: 'clamp(5px, 9 / 2480 * 100vw, 9px) solid transparent',
-    borderRight: 'clamp(5px, 9 / 2480 * 100vw, 9px) solid transparent',
+    borderLeft: '5px solid transparent',
+    borderRight: '5px solid transparent',
+    [mq.large]: {
+      borderLeft: '9px solid transparent',
+      borderRight: '9px solid transparent',
+    },
   },
   ({variant}) => percentStatus[variant],
+  ({size}) => ({
+    borderLeft: size === 'big' && '7px solid transparent',
+    borderRight: size === 'big' && '7px solid transparent',
+    [mq.large]: {
+      borderLeft: size === 'big' && '11px solid transparent',
+      borderRight: size === 'big' && '11px solid transparent',
+    }
+  })
 )
 
-const ShowValue = styled.p(
-  {
-    fontSize: 'clamp(20px, 50 / 2480 * 100vw, 50px)',
+const resultSize = {
+  small: {
+    fontSize: '18px',
+    [mq.large]: {
+      fontSize: '32px',
+    }
+  },
+  normal: {
+    fontSize: '23px',
+    [mq.large]: {
+      fontSize: '50px',
+    }
+  },
+  big: {
+    fontSize: '38px',
+    [mq.large]: {
+      fontSize: '70px',
+    }
+  },
+  large: {
+    fontSize: '42px',
+    [mq.large]: {
+      fontSize: '86px',
+    }
+  }
+}
+
+const ResultValue = styled.p({
     fontWeight: '400',
-    lineHeight: '1.4'
+    lineHeight: '1.4',
   },
-  ({color}) => colorStatus[color],
+  ({color}) => colors[color],
+  ({size}) => resultSize[size],
 )
 
-const PercentNum = styled.span(
-  {
-    fontSize: 'clamp(18px, 32 / 2480 * 100vw, 32px)',
+const percentSize = {
+  small: {
+    fontSize: '18px',
+    [mq.large]: {
+      fontSize: '28px',
+    }
   },
-  ({variant}) => colorStatus[variant],
+  normal: {
+    fontSize: '20px',
+    [mq.large]: {
+      fontSize: '34px',
+    }
+  },
+  big: {
+    fontSize: '24px',
+    [mq.large]: {
+      fontSize: '39px',
+    }
+  }
+}
+
+const PercentValue = styled.span(
+  ({color}) => colors[color],
+  ({size}) => percentSize[size],
 )
 
 const liStatus = {
@@ -81,27 +156,31 @@ const liStatus = {
   },
 }
 
-const Li = styled.li(
-  {
+const Li = styled.li({
    fontFamily: 'Open Sans',  
-   fontSize: 'clamp(14px, 28 / 2480 * 100vw, 28px)',
+   fontSize: '16px',
+   [mq.large]: {
+     fontSize: '28px',
+   }
   },
   ({variant}) => liStatus[variant],
 )
 
-const Circle = styled.span(
-  {
-    height: 'clamp(9px, 16 / 2480 * 100vw, 16px)',
-    width: 'clamp(9px, 16 / 2480 * 100vw, 16px)',
+const Circle = styled.span({
+    height: '9px',
+    width: '9px',
     marginRight: 'clamp(9px, 12 / 2480 * 100vw, 12px)',
     borderRadius: '50%',
     display: 'inline-block',
+    [mq.large]: {
+      height: '16px',
+      width: '16px'
+    }
   },
-  ({color}) => colorStatus[color],
+  ({color}) => colors[color],
 )
 
-const Container = styled.div(
-  {
+const Container = styled.div({
     display: 'flex',
   },
   props => ({
@@ -115,29 +194,20 @@ const Container = styled.div(
 ))
 
 const Button = styled.button`
-  width: 169px;
-  height: 47px;
-  padding: 6px 16px 7px 17px;
+  padding: 4px 12px 5px 13px;
   border-radius: 6px;
   border: solid 2px #3384af;
   background-color: #3384af;
   color: #ffffff;
-  fontSize: 25px;
+  fontSize: 17px;
   &:hover {
     background-color: white;
     color: #3384af;
-    font-weight: bold;
     transition: all .3s ease-in-out;
   }
-  @media (max-width: 991px) {
-    width: 132px;
-    height: 40px;
-    font-size: 16px !important;
-  }
-  @media (min-width: 991px) and (max-width: 1441px) {
-    width: 142px;
-    height: 40px;
-    font-size: 18px !important;
+  @media (min-width: 2479px) {
+    font-size: 25px;
+    padding: 6px 16px 7px 17px;
   }
 `
 
@@ -153,56 +223,49 @@ const ptagStyle = {
   period: {
     color: '#6c6b68',
     lineHeight: '2.06',
-    fontSize: '18px',
-    [mq.small]: {
-      fontSize: '12px'
-    },
-    [mq.medium]: {
-      fontSize: '14px'
+    fontSize: '12px',
+    [mq.large]: {
+      fontSize: '18px'
     },
   },
   periodT: {
     color: '#6c6b68',
     lineHeight: 'normal',
-    fontSize: '52px',
-    [mq.small]: {
-      fontSize: '28px'
-    },
-    [mq.medium]: {
-      fontSize: '30px'
-    },
+    fontSize: '28px',
+    [mq.large]: {
+      fontSize: '52px'
+    }
   },
   content: {
     color: 'black',
-    fontSize: '38px',
+    fontSize: '22px',
     fontWeight: '400',
     lineHeight: '1.26',
-    [mq.small]: {
-      fontSize: '22px'
-    },
-    [mq.medium]: {
-      fontSize: '24px'
-    },
+    [mq.large]: {
+      fontSize: '38px'
+    }
   },
   comment: {
     color: 'black',
-    fontSize: '28px',
+    fontSize: '18px',
     lineHeight: '1.36',
-    [mq.small]: {
-      fontSize: '16px'
-    },
-    [mq.medium]: {
-      fontSize: '18px'
-    },
+    [mq.large]: {
+      fontSize: '28px'
+    }
   }
 }
 
-const Text = styled.p(
-  {
+const Text = styled.p({
     color: 'black',
   },
   ({type}) => ptagStyle[type],
 )
 
+const Span = styled.span({
+  fontFamily: 'Poppins',
+  fontWeight: '500',
+  color: '#3384af',
+  textDecoration: 'underline'
+})
 
-export {ShowPercent, ValueHeader, PercentNum, ShowValue, Li, Circle, Container, Text, Button, OutlineButton}
+export {CurrentStatus, ValueHeader, PercentValue, ResultValue, Li, Circle, Container, Text, Button, OutlineButton, Span}
