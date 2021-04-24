@@ -12,6 +12,16 @@
   }
 }
 
+.card {
+  width: 400px;
+  margin: 0 auto;
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+}
+.card input {
+  border-radius: 23px;
+  background: ghostwhite;
+  border: 2px solid lightsteelblue;
+}
 main {
   h2 {
     margin-top: get-vw(85);

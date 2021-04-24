@@ -1,24 +1,33 @@
-import React from 'react';
-// import {
-//   BrowserRouter as Router,
-//   Route,
-//   Link
-// } from "react-router-dom";
+import React, { useState } from "react";
+import * as auth from "./auth-provider";
 
+import AuthenticatedApp from "./authenticated-app";
+import UnauthenticatedApp from "./unauthenticated-app";
 
-import Overall from './pages/Overall';
-// import Products from './pages/Products';
-// import Distributors from './pages/Distributors';
+const App = () => {
+  const [authenticated, setAuthenticated] = useState(() => {
+    const authToken = auth.getToken();
+    if (authToken === process.env.REACT_APP_AUTH_TOKEN) {
+      return true;
+    } else {
+      return false;
+    }
+  });
 
-const App = () => (
-  // <Router>
-  //   <Switch>
-  //     <Route exact path="/" component={Overall} />
-  //     <Route path="/products" component={Products} />
-  //     <Route path="/distributors" component={Distributors} />
-  //   </Switch>
-  // </Router>
-  <Overall />
-);
+  const login = ({ username, password }) => {
+    setAuthenticated(
+      auth.login({
+        username,
+        password,
+      })
+    );
+  };
+
+  return authenticated ? (
+    <AuthenticatedApp />
+  ) : (
+    <UnauthenticatedApp login={login} />
+  );
+};
 
 export default App;

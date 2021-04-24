@@ -1,11 +1,9 @@
 import React from 'react';
 
-import BaseComponent from '../components/BaseComponent';
+import BaseComponent from '../components/shared/BaseComponent';
 
-const Distributors = () => (
+export const Distributors = () => (
   <BaseComponent>
     
   </BaseComponent>
 )
-
-export default Distributors;
