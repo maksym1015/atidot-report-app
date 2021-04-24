@@ -45,7 +45,7 @@ function LoginForm({ onSubmit, onUsernameChange }) {
         <Input
           id="username"
           onChange={handleUsernameChange}
-          placeholder="Eyal"
+          placeholder="Username"
         />
       </FormGroup>
       <FormGroup>
