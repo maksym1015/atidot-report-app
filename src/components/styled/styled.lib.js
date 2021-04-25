@@ -280,8 +280,9 @@ const Span = styled.span({
 });
 
 const inputStyles = {
-  border: "1px solid #f1f1f4",
-  background: "#f1f2f7",
+  borderRadius: "23px",
+  background: "ghostwhite",
+  border: "2px solid lightsteelblue",
   padding: "8px 12px",
 };
 const Input = styled.input({ borderRadius: "3px" }, inputStyles);
