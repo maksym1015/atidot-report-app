@@ -29,6 +29,20 @@ h3 {
 .col-md-6 {
   padding: 0 20px;
 }
+.col-md-3 {
+  padding: 0 20px;
+  @include mq("desktop-xwide") {
+    padding: 0 70px;
+  }
+}
+.border-line {
+  padding-bottom: 30px;
+  border-bottom: 2px solid #f4f4f4;
+  @include mq("desktop-xwide") {
+    padding-bottom: 70px;
+    border-bottom: 3px solid #f4f4f4;
+  }
+}
 section {
   margin-top: 85px;
   @include mq("phone") {

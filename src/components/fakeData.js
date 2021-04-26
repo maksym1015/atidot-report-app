@@ -76,7 +76,7 @@ const measurings = [
           },
           {
             text: "Benchmark Avg.",
-            value: "15",
+            value: "11",
             percent: "29%",
             status: "up",
           },
@@ -142,7 +142,7 @@ const measurings = [
           },
           {
             text: "Benchmark Avg.",
-            value: "15",
+            value: "12",
             percent: "29%",
             status: "up",
           },
@@ -208,7 +208,7 @@ const measurings = [
           },
           {
             text: "Benchmark Avg.",
-            value: "15",
+            value: "7",
             percent: "29%",
             status: "up",
           },
@@ -274,7 +274,7 @@ const measurings = [
           },
           {
             text: "Benchmark Avg.",
-            value: "15",
+            value: "3.6",
             percent: "29%",
             status: "up",
           },
