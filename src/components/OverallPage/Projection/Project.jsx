@@ -14,7 +14,10 @@ const Project = (props) => {
   return (
     <FlexContainer justify={type === "paid" ? "space-around" : "space-between"}>
       <FlexContainer column>
-        <ValueHeader size={type === "paid" ? "big" : "small"}>Me</ValueHeader>
+        <FlexContainer justify="space-around" align="center">
+          <ValueHeader size={type === "paid" ? "big" : "small"}>Me</ValueHeader>
+          <span className="chart-line"></span>
+        </FlexContainer>
         <FlexContainer align="center">
           <ResultValue
             size={type === "paid" ? "large" : "normal"}
@@ -33,9 +36,12 @@ const Project = (props) => {
         </FlexContainer>
       </FlexContainer>
       <FlexContainer column>
-        <ValueHeader size={type === "paid" ? "big" : "small"}>
-          Benchmark avg.
-        </ValueHeader>
+        <FlexContainer justify="space-around" align="center">
+          <span className="circle"></span>
+          <ValueHeader size={type === "paid" ? "big" : "small"}>
+            Benchmark avg.
+          </ValueHeader>
+        </FlexContainer>
         <FlexContainer align="center">
           <ResultValue
             size={type === "paid" ? "large" : "normal"}
