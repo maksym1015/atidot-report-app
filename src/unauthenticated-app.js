@@ -7,7 +7,7 @@ import {
   Input,
   Button,
   FormGroup,
-  Container,
+  FlexContainer,
 } from "./components/styled/styled.lib";
 import Card from "react-bootstrap/Card";
 import reportLogo from "./assets/img/Image 6.png";
@@ -52,9 +52,9 @@ function LoginForm({ onSubmit, onUsernameChange }) {
         <label htmlFor="password">Password</label>
         <Input id="password" type="password" placeholder="Password" />
       </FormGroup>
-      <Container justify="center">
+      <FlexContainer justify="center">
         <Button>Login</Button>
-      </Container>
+      </FlexContainer>
     </form>
   );
 }
@@ -72,7 +72,8 @@ const UnauthenticatedApp = ({ login }) => {
       <Card.Body>
         <h1 className="txt-center my-3">Weekly Report</h1>
         <Card.Subtitle className="my-3 text-muted text-center">
-          Hi {name}! Please type your password.
+          Hi <span className="font-weight-bold">{name}</span>! Please type your
+          password.
         </Card.Subtitle>
         <div>
           <LoginForm onSubmit={login} onUsernameChange={handleUsername} />

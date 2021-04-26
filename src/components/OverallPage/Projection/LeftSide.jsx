@@ -2,12 +2,10 @@ import React from "react";
 import Project from "./Project";
 import {
   ComposedChart,
-  Line,
   CartesianGrid,
   XAxis,
   YAxis,
   ResponsiveContainer,
-  Tooltip,
   Area,
 } from "recharts";
 
@@ -59,10 +57,24 @@ const Compare = (props) => (
           left: 20,
         }}
       >
-        <CartesianGrid stroke="#f5f5f5" y="none" />
+        <CartesianGrid vertical={false} stroke="#f4f4f4" />
         <XAxis dataKey="name" />
         <YAxis dataKey="yAxis" />
-        <Tooltip />
+        <Area
+          type="linear"
+          dataKey="lineV"
+          fill="rgba(255, 255, 255, 0.1)"
+          stroke="#dea831"
+          dot={{ fill: "#dea831", fillOpacity: "1" }}
+        />
+        <Area
+          type="linear"
+          dataKey="lineDashV"
+          fill="rgba(255, 255, 255, 0.1)"
+          stroke="#dea831"
+          strokeDasharray="5 5"
+          dot={{ fill: "#dea831", fillOpacity: "1" }}
+        />
         <Area
           type="linear"
           dataKey="areaV"
@@ -77,14 +89,6 @@ const Compare = (props) => (
           stroke="#3384af"
           strokeDasharray="5 5"
           dot={{ fill: "#3384af", fillOpacity: "1" }}
-        />
-        <Line type="linear" dataKey="lineV" stroke="#dea831" fill="#dea831" />
-        <Line
-          type="linear"
-          dataKey="lineDashV"
-          stroke="#dea831"
-          strokeDasharray="5 5"
-          fill="#dea831"
         />
       </ComposedChart>
     </ResponsiveContainer>

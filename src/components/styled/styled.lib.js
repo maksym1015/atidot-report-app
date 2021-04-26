@@ -188,7 +188,7 @@ const Circle = styled.span(
   ({ color }) => colors[color]
 );
 
-const Container = styled.div(
+const FlexContainer = styled.div(
   {
     display: "flex",
   },
@@ -208,7 +208,7 @@ const Button = styled.button`
   border: solid 2px #3384af;
   background-color: #3384af;
   color: #ffffff;
-  font-size: 17px;
+  font-size: 16px;
   &:hover {
     background-color: white;
     color: #3384af;
@@ -246,6 +246,13 @@ const ptagStyle = {
       fontSize: "52px",
     },
   },
+  title: {
+    fontSize: "22px",
+    fontWeight: "600",
+    [mq.large]: {
+      fontSize: "36px",
+    },
+  },
   content: {
     color: "black",
     fontSize: "22px",
@@ -257,10 +264,10 @@ const ptagStyle = {
   },
   comment: {
     color: "black",
-    fontSize: "18px",
+    fontSize: "17px",
     lineHeight: "1.36",
     [mq.large]: {
-      fontSize: "28px",
+      fontSize: "26px",
     },
   },
 };
@@ -338,7 +345,7 @@ export {
   ResultValue,
   Li,
   Circle,
-  Container,
+  FlexContainer,
   Text,
   Button,
   OutlineButton,

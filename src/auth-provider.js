@@ -18,7 +18,7 @@ function login({ username, password }) {
     );
     setTimeout(function () {
       removeToken();
-    }, 60 * 30 * 1000);
+    }, 15 * 60 * 1000);
     return true;
   } else {
     alert("Password or Username is wrong");
