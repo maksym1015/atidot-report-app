@@ -16,7 +16,7 @@ const Project = (props) => {
       <FlexContainer column>
         <FlexContainer justify="space-around" align="center">
           <ValueHeader size={type === "paid" ? "big" : "small"}>Me</ValueHeader>
-          <span className="chart-line"></span>
+          {type !== "paid" && <span className="chart-line"></span>}
         </FlexContainer>
         <FlexContainer align="center">
           <ResultValue
@@ -37,7 +37,7 @@ const Project = (props) => {
       </FlexContainer>
       <FlexContainer column>
         <FlexContainer justify="space-around" align="center">
-          <span className="circle"></span>
+          {type !== "paid" && <span className="circle"></span>}
           <ValueHeader size={type === "paid" ? "big" : "small"}>
             Benchmark avg.
           </ValueHeader>
