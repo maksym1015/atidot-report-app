@@ -30,7 +30,7 @@ const Project = (props) => {
             variant="up"
             className="mx-2"
           />
-          <PercentValue size={type === "paid" ? "big" : "normal"} color="green">
+          <PercentValue size={type === "paid" ? "big" : "normal"} color="up">
             {percent[0]}
           </PercentValue>
         </FlexContainer>

@@ -21,10 +21,10 @@ const percentStatus = {
 };
 
 const colors = {
-  green: {
+  up: {
     color: "#47c70e",
   },
-  red: {
+  down: {
     color: "#f22736",
   },
   black: {
@@ -73,6 +73,7 @@ const CurrentStatus = styled.div(
   {
     width: 0,
     height: 0,
+    margin: "auto",
     borderLeft: "5px solid transparent",
     borderRight: "5px solid transparent",
     [mq.large]: {
@@ -191,6 +192,10 @@ const Circle = styled.span(
 const FlexContainer = styled.div(
   {
     display: "flex",
+    width: "90%",
+    "&.current-state-container": {
+      flex: 1,
+    },
   },
   (props) => ({
     flexDirection: props.column && "column",
@@ -201,6 +206,11 @@ const FlexContainer = styled.div(
     border: props.type === "paid" && "1px solid #b0cbd9",
   })
 );
+
+const ContentWrapper = styled.div({
+  margin: "auto",
+  display: "flex",
+});
 
 const Button = styled.button`
   padding: 4px 12px 5px 13px;
@@ -340,6 +350,7 @@ const CircleButton = styled.button({
 
 export {
   CurrentStatus,
+  ContentWrapper,
   ValueHeader,
   PercentValue,
   ResultValue,

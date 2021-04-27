@@ -2,9 +2,12 @@ import React from "react";
 
 import {
   FlexContainer,
+  ContentWrapper,
   Text,
   ResultValue,
   OutlineButton,
+  CurrentStatus,
+  PercentValue,
 } from "../styled/styled.lib";
 import Container from "../shared/Container";
 import {
@@ -18,29 +21,79 @@ import {
 
 const ChartComponent = (props) => {
   const data = props.chartData;
-
-  const CustomizedLabel = ({ x, y, value }) => {
+  console.log(data.percent);
+  console.log(data);
+  const CustomizedLabel = ({ x, width, y, value }) => {
     return (
-      <text x={x} y={y} dy={-4} fontSize="16" fill="#000" textAnchor="right">
+      <text
+        x={x + width / 2}
+        y={y - 5}
+        dy={-4}
+        fontSize="16"
+        fill="#000"
+        textAnchor="middle"
+        dominantBaseline="middle"
+      >
         ~{value}
       </text>
     );
   };
 
+  // const CustomXAxisTick = (props) => {
+  //   console.log(props.payload);
+  //   return <span {...props}>{"Hi"}</span>;
+  // };
+
   return (
-    <ResponsiveContainer width="100%" height={170}>
-      <BarChart data={data} margin={{ top: 20, right: 0, left: 0, bottom: 0 }}>
-        <XAxis dataKey="text" tick={{ fill: "#000" }} />
-        <YAxis hide />
-        <Bar dataKey="value" barSize={100} label={<CustomizedLabel />}>
-          {data.map((entry, index) => (
-            <Cell key={index} fill={index === 0 ? "#3384af" : "#dea831"} />
-          ))}
-        </Bar>
-      </BarChart>
-    </ResponsiveContainer>
+    <>
+      <ResponsiveContainer width="90%" height={170}>
+        <BarChart
+          data={data}
+          margin={{ top: 20, right: 0, left: 0, bottom: 0 }}
+        >
+          {/* <XAxis
+          dataKey="text"
+          tickLine={false}
+          axisLine={{ stroke: "#DDD" }}
+          tick={<CustomXAxisTick stroke="#333" />}
+        /> */}
+          <XAxis dataKey="text" tick={{ fill: "#000" }} />
+          <YAxis hide />
+          <Bar dataKey="value" barSize={100} label={<CustomizedLabel />}>
+            {data.map((entry, index) => (
+              <Cell key={index} fill={index === 0 ? "#3384af" : "#dea831"} />
+            ))}
+          </Bar>
+        </BarChart>
+      </ResponsiveContainer>
+      <FlexContainer justify="space-around">
+        <FlexContainer align="center" className="current-state-container">
+          <ContentWrapper>
+            <CurrentStatus
+              size="big"
+              variant={data[0].status}
+              className="mx-2"
+            />
+            <PercentValue color={data[0].status}>
+              {data[0].percent}
+            </PercentValue>
+          </ContentWrapper>
+        </FlexContainer>
+        <FlexContainer align="center" className="current-state-container">
+          <ContentWrapper>
+            <CurrentStatus
+              size="big"
+              variant={data[1].status}
+              className="mx-2"
+            />
+            <PercentValue color={data[1].status}>
+              {data[1].percent}
+            </PercentValue>
+          </ContentWrapper>
+        </FlexContainer>
+      </FlexContainer>
+    </>
   );
-  // return <div></div>;
 };
 
 const CategoryItem = (props) => {
@@ -50,7 +103,7 @@ const CategoryItem = (props) => {
       <ChartComponent chartData={category.chartData} />
     ) : (
       <>
-        <ResultValue size="big" color="green">
+        <ResultValue size="big" color="up">
           {category.value}
         </ResultValue>
         <FlexContainer>
