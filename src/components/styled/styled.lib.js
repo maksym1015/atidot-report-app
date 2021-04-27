@@ -73,7 +73,6 @@ const CurrentStatus = styled.div(
   {
     width: 0,
     height: 0,
-    margin: "auto",
     borderLeft: "5px solid transparent",
     borderRight: "5px solid transparent",
     [mq.large]: {
@@ -123,6 +122,7 @@ const ResultValue = styled.p(
   {
     fontWeight: "400",
     lineHeight: "1.4",
+    color: "black",
   },
   ({ color }) => colors[color],
   ({ size }) => resultSize[size]
@@ -130,7 +130,7 @@ const ResultValue = styled.p(
 
 const percentSize = {
   small: {
-    fontSize: "18px",
+    fontSize: "17px",
     [mq.large]: {
       fontSize: "28px",
     },
@@ -150,6 +150,9 @@ const percentSize = {
 };
 
 const PercentValue = styled.span(
+  {
+    color: "black",
+  },
   ({ color }) => colors[color],
   ({ size }) => percentSize[size]
 );
@@ -192,7 +195,6 @@ const Circle = styled.span(
 const FlexContainer = styled.div(
   {
     display: "flex",
-    width: "90%",
     "&.current-state-container": {
       flex: 1,
     },
