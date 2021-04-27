@@ -40,9 +40,9 @@ const BaseComponent = (props) => (
           <br />
           BY
         </p>
-        <Link to="https://atidot.com">
+        <a href="https://atidot.com">
           <img className="logo" src={logo} alt="Atidot Logo" />
-        </Link>
+        </a>
       </FlexContainer>
     </footer>
   </>
