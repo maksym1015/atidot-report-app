@@ -23,17 +23,19 @@ const BaseComponent = (props) => (
       </FlexContainer>
     </header>
     <main>{props.children}</main>
-    <footer className="d-flex justify-content-between">
-      <FlexContainer align="center">
-        <div className="exclamation"></div>
-        <p className="footer-text">
-          The ‘Overall Score’ is a predictive score for the next quarter.
-          <br /> This data is an estimation based on analyse of the
-          distributors’ predictive performance compared to the industry and
-          their potential LTV, Underinsurance, Upsell Opportunities, Likelihood
-          to Place, Cycle Time Loyalty, and Lapse.
-        </p>
-      </FlexContainer>
+    <footer className={props.type && "d-flex justify-content-between"}>
+      {props.type === "distributor" && (
+        <FlexContainer align="center">
+          <div className="exclamation"></div>
+          <p className="footer-text">
+            The ‘Overall Score’ is a predictive score for the next quarter.
+            <br /> This data is an estimation based on analyse of the
+            distributors’ predictive performance compared to the industry and
+            their potential LTV, Underinsurance, Upsell Opportunities,
+            Likelihood to Place, Cycle Time Loyalty, and Lapse.
+          </p>
+        </FlexContainer>
+      )}
       <FlexContainer align="center" justify="flex-end">
         <p className="logo-text">
           POWERED

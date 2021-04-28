@@ -72,7 +72,6 @@ const TableRow = (props) => {
 
 const DistributorPage = (props) => {
   const item = props.value;
-  console.log(item.tableData);
 
   const tableRow = item.tableData.map((item, index) => (
     <TableRow key={index} value={item} />
@@ -89,7 +88,7 @@ const DistributorPage = (props) => {
           Show Details
         </a>
       </FlexContainer>
-      <Table hover responsive="md">
+      <Table hover responsive="lg">
         <thead>
           <tr>
             <th>Name</th>

@@ -1,23 +1,24 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import { Overall, Products, Distributors } from "./pages";
+import Loading from "./components/shared/Loading";
+const Overall = lazy(() => import("./pages/Overall"));
+const Products = lazy(() => import("./pages/Products"));
+const Distributors = lazy(() => import("./pages/Distributors"));
 
 const AuthenticatedApp = () => {
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/">
-          <Overall />
-        </Route>
-        <Route path="/products">
-          <Products />
-        </Route>
-        <Route path="/distributors">
-          <Distributors />
-        </Route>
-      </Switch>
-    </Router>
+    <>
+      <Router>
+        <Suspense fallback={<Loading />}>
+          <Switch>
+            <Route exact path="/" component={Overall} />
+            <Route path="/products" component={Products} />
+            <Route path="/distributors" component={Distributors} />
+          </Switch>
+        </Suspense>
+      </Router>
+    </>
   );
 };
 

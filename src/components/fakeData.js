@@ -317,7 +317,7 @@ const distributors = [
     small: "vs. Benchmark Avg.",
     tableData: [
       {
-        name: "Distributor A",
+        name: "LPL Insurance Associates, Inc",
         sub: {
           car_status: "up",
           carrier: "10%",
@@ -338,7 +338,7 @@ const distributors = [
         con: "90",
       },
       {
-        name: "Distributor B",
+        name: "Diversified Brokerage Services",
         sub: {
           car_status: "up",
           carrier: "10%",
@@ -359,7 +359,7 @@ const distributors = [
         con: "70",
       },
       {
-        name: "Distributor C",
+        name: "Protective Distributors",
         sub: {
           car_status: "up",
           carrier: "10%",

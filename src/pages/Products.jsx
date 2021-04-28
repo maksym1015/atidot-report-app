@@ -9,10 +9,12 @@ const measureList = measurings.map((item, index) => (
   <ProductPage key={index} value={item} />
 ));
 
-export const Products = () => (
+const Products = () => (
   <BaseComponent>
     <Text type="periodT">December 21 - January 18, 2020</Text>
     <h2>By Product</h2>
     {measureList}
   </BaseComponent>
 );
+
+export default Products;

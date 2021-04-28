@@ -9,10 +9,12 @@ const distributorList = distributors.map((item, index) => (
   <DistributorPage key={index} value={item} />
 ));
 
-export const Distributors = () => (
+const Distributors = () => (
   <BaseComponent type="distributor">
     <Text type="periodT">December 21 - January 18, 2020</Text>
     <h2>By Distributors</h2>
     {distributorList}
   </BaseComponent>
 );
+
+export default Distributors;
