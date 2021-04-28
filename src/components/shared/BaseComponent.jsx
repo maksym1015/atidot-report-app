@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { FlexContainer } from "../styled/styled.lib";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "../../assets/scss/app.scss";
+
 import reportLogo from "../../assets/img/Image 6.png";
 import logo from "../../assets/img/Image 7.png";
 

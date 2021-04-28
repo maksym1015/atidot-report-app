@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import * as auth from "./auth-provider";
-
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./assets/scss/app.scss";
 import AuthenticatedApp from "./authenticated-app";
 import UnauthenticatedApp from "./unauthenticated-app";
 
