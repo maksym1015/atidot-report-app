@@ -5,6 +5,7 @@ import Loading from "./components/shared/Loading";
 const Overall = lazy(() => import("./pages/Overall"));
 const Products = lazy(() => import("./pages/Products"));
 const Distributors = lazy(() => import("./pages/Distributors"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 const AuthenticatedApp = () => {
   return (
@@ -15,6 +16,7 @@ const AuthenticatedApp = () => {
             <Route exact path="/" component={Overall} />
             <Route path="/products" component={Products} />
             <Route path="/distributors" component={Distributors} />
+            <Route path="*" component={NotFound} />
           </Switch>
         </Suspense>
       </Router>
