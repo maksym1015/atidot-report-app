@@ -15,7 +15,7 @@ const NotFound = () => {
         <div className="mouth"></div>
       </div>
 
-      <h1>Oops! Something went wrong!</h1>
+      <h1 className="whoops">Oops! Something went wrong!</h1>
       <div className="d-flex justify-content-center mt-3">
         <Link to="/">Return to Home</Link>
       </div>

@@ -6,23 +6,6 @@ $blue: #5e7fdc;
 
 $break: 400px;
 
-body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  min-height: 100vh;
-  background-color: $gb;
-  font-family: "Open Sans";
-  overflow: hidden;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: content-box;
-  transform: translate3d(0, 0, 0);
-}
-
 .face {
   width: 300px;
   height: 300px;
@@ -71,18 +54,6 @@ body {
       background-color: rgba($wh, 0.3);
       position: absolute;
       z-index: 999;
-    }
-
-    &:after {
-      content: "";
-      display: inline-block;
-      height: 27px;
-      width: 30px;
-      background-color: rgba($dark, 0.3);
-      position: absolute;
-      z-index: 999;
-      right: 0;
-      margin-top: -27px;
     }
   }
 
@@ -152,7 +123,7 @@ body {
   }
 }
 
-h1 {
+.whoops {
   font-weight: 800;
   color: $dark;
   text-align: center;
