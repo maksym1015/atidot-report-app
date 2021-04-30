@@ -2,6 +2,10 @@
 
 This project was deployed at here. [Atidot Report App](https://atidot-weekly-report.netlify.app/).
 
+Credentail:
+name: Eyal
+password: 11111
+
 Used Styled Components.
 
 ## Available Scripts
