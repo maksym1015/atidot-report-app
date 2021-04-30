@@ -2,7 +2,7 @@
 
 This project was deployed at here. [Atidot Report App](https://atidot-weekly-report.netlify.app/).
 
-Credentail:
+Credential:
 <br />
 name: Eyal
 <br />
