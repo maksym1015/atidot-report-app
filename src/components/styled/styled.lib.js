@@ -37,12 +37,30 @@ const colors = {
     backgroundColor: "#265b85",
   },
   1: {
-    backgroundColor: "#3384af",
+    backgroundColor: "#295b99",
   },
   2: {
-    backgroundColor: "#66bcea",
+    backgroundColor: "#3177af",
   },
   3: {
+    backgroundColor: "#3384af",
+  },
+  4: {
+    backgroundColor: "#43bcea",
+  },
+  5: {
+    backgroundColor: "#66bcea",
+  },
+  6: {
+    backgroundColor: "#86bceb",
+  },
+  7: {
+    backgroundColor: "#a0bcdd",
+  },
+  8: {
+    backgroundColor: "#c0cbde",
+  },
+  9: {
     backgroundColor: "#e0e1de",
   },
 };
@@ -318,7 +336,7 @@ const errorMessageVariants = {
 function ErrorMessage({ error, variant = "stacked", ...props }) {
   return (
     <div
-      role="alert"
+      role='alert'
       css={[{ color: colors.danger }, errorMessageVariants[variant]]}
       {...props}
     >

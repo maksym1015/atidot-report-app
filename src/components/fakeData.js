@@ -45,72 +45,6 @@ const gaps = {
 
 const measurings = [
   {
-    title: "Term",
-    category: [
-      {
-        subTitle: "Submissions",
-        chartData: [
-          {
-            text: "Me",
-            value: "123",
-            percent: "42%",
-            status: "up",
-          },
-          {
-            text: "Benchmark Avg.",
-            value: "234",
-            percent: "49%",
-            status: "up",
-          },
-        ],
-        type: "chart",
-      },
-      {
-        subTitle: "Submitted Premium",
-        chartData: [
-          {
-            text: "Me",
-            value: "9.7",
-            percent: "28%",
-            status: "up",
-          },
-          {
-            text: "Benchmark Avg.",
-            value: "11",
-            percent: "29%",
-            status: "up",
-          },
-        ],
-        type: "chart",
-      },
-      {
-        subTitle: "Paid Potential",
-        chartData: [
-          {
-            text: "Me",
-            value: "7.8",
-            percent: "18%",
-            status: "down",
-          },
-          {
-            text: "Benchmark Avg.",
-            value: "2.8",
-            percent: "5%",
-            status: "down",
-          },
-        ],
-        type: "chart",
-      },
-      {
-        subTitle: "Premium Loss/Gain",
-        value: "+$3.9M",
-        comment: "Negative growth predicted at ",
-        distributor: "Distributor D",
-        type: "total",
-      },
-    ],
-  },
-  {
     title: "Whole Life",
     category: [
       {
@@ -143,72 +77,6 @@ const measurings = [
           {
             text: "Benchmark Avg.",
             value: "12",
-            percent: "29%",
-            status: "up",
-          },
-        ],
-        type: "chart",
-      },
-      {
-        subTitle: "Paid Potential",
-        chartData: [
-          {
-            text: "Me",
-            value: "7.8",
-            percent: "18%",
-            status: "down",
-          },
-          {
-            text: "Benchmark Avg.",
-            value: "2.8",
-            percent: "5%",
-            status: "down",
-          },
-        ],
-        type: "chart",
-      },
-      {
-        subTitle: "Premium Loss/Gain",
-        value: "+$3.9M",
-        comment: "Negative growth predicted at ",
-        distributor: "Distributor D",
-        type: "total",
-      },
-    ],
-  },
-  {
-    title: "VUL",
-    category: [
-      {
-        subTitle: "Submissions",
-        chartData: [
-          {
-            text: "Me",
-            value: "123",
-            percent: "42%",
-            status: "up",
-          },
-          {
-            text: "Benchmark Avg.",
-            value: "234",
-            percent: "49%",
-            status: "up",
-          },
-        ],
-        type: "chart",
-      },
-      {
-        subTitle: "Submitted Premium",
-        chartData: [
-          {
-            text: "Me",
-            value: "9.7",
-            percent: "28%",
-            status: "up",
-          },
-          {
-            text: "Benchmark Avg.",
-            value: "7",
             percent: "29%",
             status: "up",
           },
@@ -289,6 +157,139 @@ const measurings = [
             value: "7.8",
             percent: "18%",
             status: "up",
+          },
+          {
+            text: "Benchmark Avg.",
+            value: "2.8",
+            percent: "5%",
+            status: "down",
+          },
+        ],
+        type: "chart",
+      },
+      {
+        subTitle: "Premium Loss/Gain",
+        value: "+$3.9M",
+        comment: "Negative growth predicted at ",
+        distributor: "Distributor D",
+        type: "total",
+      },
+    ],
+  },
+  {
+    title: "Term",
+    category: [
+      {
+        subTitle: "Submissions",
+        chartData: [
+          {
+            text: "Me",
+            value: "123",
+            percent: "42%",
+            status: "up",
+          },
+          {
+            text: "Benchmark Avg.",
+            value: "234",
+            percent: "49%",
+            status: "up",
+          },
+        ],
+        type: "chart",
+      },
+      {
+        subTitle: "Submitted Premium",
+        chartData: [
+          {
+            text: "Me",
+            value: "9.7",
+            percent: "28%",
+            status: "up",
+          },
+          {
+            text: "Benchmark Avg.",
+            value: "11",
+            percent: "29%",
+            status: "up",
+          },
+        ],
+        type: "chart",
+      },
+      {
+        subTitle: "Paid Potential",
+        chartData: [
+          {
+            text: "Me",
+            value: "7.8",
+            percent: "18%",
+            status: "down",
+          },
+          {
+            text: "Benchmark Avg.",
+            value: "2.8",
+            percent: "5%",
+            status: "down",
+          },
+        ],
+        type: "chart",
+      },
+      {
+        subTitle: "Premium Loss/Gain",
+        value: "+$3.9M",
+        comment: "Negative growth predicted at ",
+        distributor: "Distributor D",
+        type: "total",
+      },
+    ],
+  },
+
+  {
+    title: "VUL",
+    category: [
+      {
+        subTitle: "Submissions",
+        chartData: [
+          {
+            text: "Me",
+            value: "123",
+            percent: "42%",
+            status: "up",
+          },
+          {
+            text: "Benchmark Avg.",
+            value: "234",
+            percent: "49%",
+            status: "up",
+          },
+        ],
+        type: "chart",
+      },
+      {
+        subTitle: "Submitted Premium",
+        chartData: [
+          {
+            text: "Me",
+            value: "9.7",
+            percent: "28%",
+            status: "up",
+          },
+          {
+            text: "Benchmark Avg.",
+            value: "7",
+            percent: "29%",
+            status: "up",
+          },
+        ],
+        type: "chart",
+      },
+      {
+        subTitle: "Paid Potential",
+        chartData: [
+          {
+            text: "Me",
+            value: "7.8",
+            percent: "18%",
+            status: "down",
           },
           {
             text: "Benchmark Avg.",

@@ -7,16 +7,16 @@ import logo from "../../assets/img/Image 7.png";
 const BaseComponent = (props) => (
   <>
     <header>
-      <FlexContainer justify="space-between">
+      <FlexContainer justify='space-between'>
         <h1>
           Weekly Predictive <br />
           Performance Report
         </h1>
-        <Link to="/">
+        <Link to='/'>
           <img
-            className="reportLogo"
+            className='reportLogo'
             src={reportLogo}
-            alt="Atidot Report Logo"
+            alt='Atidot Report Logo'
           />
         </Link>
       </FlexContainer>
@@ -24,9 +24,9 @@ const BaseComponent = (props) => (
     <main>{props.children}</main>
     <footer className={props.type && "d-flex justify-content-between"}>
       {props.type === "distributor" && (
-        <FlexContainer align="center">
-          <div className="exclamation"></div>
-          <p className="footer-text">
+        <FlexContainer align='center'>
+          <div className='exclamation'></div>
+          <p className='footer-text'>
             The ‘Overall Score’ is a predictive score for the next quarter.
             <br /> This data is an estimation based on analyse of the
             distributors’ predictive performance compared to the industry and
@@ -35,14 +35,14 @@ const BaseComponent = (props) => (
           </p>
         </FlexContainer>
       )}
-      <FlexContainer align="center" justify="flex-end">
-        <p className="logo-text">
+      <FlexContainer align='center' justify='flex-end'>
+        <p className='logo-text'>
           POWERED
           <br />
           BY
         </p>
-        <a href="https://atidot.com">
-          <img className="logo" src={logo} alt="Atidot Logo" />
+        <a href='https://atidot.com'>
+          <img className='logo' src={logo} alt='Atidot Logo' />
         </a>
       </FlexContainer>
     </footer>

@@ -12,7 +12,7 @@ const Projection = (props) => {
   return (
     <>
       {type === "paid" ? (
-        <FlexContainer column txtCenter type="paid" className="mt-5">
+        <FlexContainer column txtCenter type='paid' className='mt-5'>
           <h3>{title[type]}</h3>
           <Project
             title={subTitle[type]}
@@ -20,15 +20,15 @@ const Projection = (props) => {
             percent={percent[type]}
             type={type}
           />
-          <a href="/" className="link-style mt-2 mb-4">
+          <a href='/' className='link-style mt-2 mb-4'>
             Show Details
           </a>
         </FlexContainer>
       ) : (
         <>
-          <FlexContainer align="baseline">
+          <FlexContainer align='baseline'>
             <h3>{title[type]}</h3>
-            <a href="/" className="link-style">
+            <a href='/' className='link-style'>
               Show Details
             </a>
           </FlexContainer>
@@ -37,8 +37,9 @@ const Projection = (props) => {
               title={subTitle[type]}
               value={value[type]}
               percent={percent[type]}
+              type={type}
             />
-            <RightSide keys={keys[type]} gaps={gaps[type]} />
+            <RightSide keys={keys[type]} gaps={gaps[type]} type={type} />
           </Container>
         </>
       )}
