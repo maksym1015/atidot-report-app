@@ -101,7 +101,7 @@ const Compare = (props) => {
         >
           <CartesianGrid vertical={false} stroke='#f4f4f4' />
           <XAxis dataKey='name' />
-          <YAxis dataKey='yAxis' />
+          <YAxis dataKey='yAxis' width={70} />
           <Area
             type='linear'
             dataKey='lineV'
