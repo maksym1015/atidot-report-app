@@ -93,31 +93,31 @@ const DistributorPage = (props) => {
     confidence = [];
 
   for (const item of Object.entries(file_1.agency)) {
-    agency.push(item[1]);
+    item[1] != null && agency.push(item[1]);
   }
   for (const item of Object.entries(file_1.perc_PL_sub)) {
-    subPl.push(item[1]);
+    item[1] != null && subPl.push(item[1]);
   }
   for (const item of Object.entries(file_1.perc_IND_sub)) {
-    subInd.push(item[1]);
+    item[1] != null && subInd.push(item[1]);
   }
   for (const item of Object.entries(file_1.perc_PL_sub_prem)) {
-    premPl.push(item[1]);
+    item[1] != null && premPl.push(item[1]);
   }
   for (const item of Object.entries(file_1.perc_IND_sub_prem)) {
-    premInd.push(item[1]);
+    item[1] != null && premInd.push(item[1]);
   }
   for (const item of Object.entries(file_1.perc_PL_prem_pot)) {
-    potPl.push(item[1]);
+    item[1] != null && potPl.push(item[1]);
   }
   for (const item of Object.entries(file_1.perc_IND_prem_pot)) {
-    potInd.push(item[1]);
+    item[1] != null && potInd.push(item[1]);
   }
   for (const item of Object.entries(file_1.loss_IND_to_PL)) {
-    loss.push(item[1]);
+    item[1] != null && loss.push(item[1]);
   }
   for (const item of Object.entries(file_1.Prediction_score)) {
-    confidence.push(item[1]);
+    item[1] != null && confidence.push(item[1]);
   }
   const len = agency.length;
   let tableData = [];
