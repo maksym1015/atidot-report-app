@@ -1,18 +1,18 @@
 import { Link } from "react-router-dom";
-import { FlexContainer } from "../styled/styled.lib";
+import { Base, FlexContainer } from "../styled/styled.lib";
 
 import reportLogo from "../../assets/img/Image 6.png";
 import logo from "../../assets/img/Image 7.png";
 
 const BaseComponent = (props) => (
-  <>
+  <Base>
     <header>
       <FlexContainer justify='space-between'>
-        <h1>
+        <h1 className='head-text'>
           Weekly Predictive <br />
           Performance Report
         </h1>
-        <div className='d-flex justify-content-around w-25'>
+        <div className='navmenu d-flex justify-content-around w-25'>
           <Link to='/'>Page 1</Link>
           <Link to='/products'>Page 2</Link>
           <Link to='/distributors'>Page 3</Link>
@@ -51,7 +51,7 @@ const BaseComponent = (props) => (
         </a>
       </FlexContainer>
     </footer>
-  </>
+  </Base>
 );
 
 export default BaseComponent;

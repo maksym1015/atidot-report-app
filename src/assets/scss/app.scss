@@ -139,6 +139,20 @@ footer {
     width: 498px;
     height: 57px;
   }
+  @include mq("phone-wide", max) {
+    width: 123px;
+    height: 23px;
+  }
+}
+.head-text {
+  @include mq("phone-wide", max) {
+    display: none;
+  }
+}
+.navmenu {
+  @include mq("phone-wide", max) {
+    width: 50% !important;
+  }
 }
 .card {
   width: 400px;
@@ -163,6 +177,9 @@ section {
   margin-top: 85px;
   @include mq("phone") {
     margin-top: 35px;
+  }
+  @include mq("phone-wide", max) {
+    margin-top: 15px;
   }
 }
 .label-top {

@@ -9,8 +9,11 @@ body {
   color: black;
   overflow-x: hidden;
   overflow-y: auto;
-  font-family: 'Poppins', 'Open Sans';
+  font-family: "Poppins", "Open Sans";
   padding: 80px;
+  @include mq("phone-wide", max) {
+    padding: 20px 15px;
+  }
   @include mq("desktop-xwide") {
     padding: 264px 250px;
   }
@@ -51,12 +54,12 @@ button,
   transition: all 0.3s ease-in-out;
 }
 a {
-  font-family: 'Poppins';
+  font-family: "Poppins";
   color: #3384af;
   text-decoration: underline;
 }
 button {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
 }
 img {
   max-width: 100%;
@@ -73,12 +76,16 @@ scroll {
   height: 100vh;
 }
 
-h1, h2, h3, h4, h5 {
-  font-family: 'Poppins';
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Poppins";
 }
 p,
 span {
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   font-weight: normal;
   font-stretch: normal;
   font-style: normal;

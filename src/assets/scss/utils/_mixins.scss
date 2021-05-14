@@ -25,6 +25,9 @@
   @include mq("desktop-xwide") {
     font-size: 80px;
   }
+  @include mq("phone-wide", max) {
+    font-size: 30px;
+  }
 }
 @mixin heading2() {
   font-size: 32px;
@@ -32,6 +35,9 @@
   line-height: normal;
   @include mq("desktop-xwide") {
     font-size: 55px;
+  }
+  @include mq("phone-wide", max) {
+    font-size: 25px;
   }
 }
 @mixin heading3() {
@@ -41,6 +47,7 @@
   @include mq("desktop-xwide") {
     font-size: 45px;
   }
+  @include mq("phone-wide", max) {
+    font-size: 21px;
+  }
 }
-
-
