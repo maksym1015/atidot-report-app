@@ -2,6 +2,14 @@
 
 This project was deployed at here. [Atidot Report App](https://atidot-weekly-report.netlify.app/).
 
+Credential:
+<br />
+name: Eyal
+<br />
+password: 11111
+
+Used Styled Components.
+
 ## Available Scripts
 
 Install node modules:
