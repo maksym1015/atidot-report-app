@@ -30,6 +30,9 @@ const colors = {
   black: {
     color: "black",
   },
+  blue: {
+    color: "#1f94ae",
+  },
   yellow: {
     color: "#dea831",
   },
@@ -37,30 +40,12 @@ const colors = {
     backgroundColor: "#265b85",
   },
   1: {
-    backgroundColor: "#295b99",
-  },
-  2: {
-    backgroundColor: "#3177af",
-  },
-  3: {
     backgroundColor: "#3384af",
   },
-  4: {
-    backgroundColor: "#43bcea",
-  },
-  5: {
+  2: {
     backgroundColor: "#66bcea",
   },
-  6: {
-    backgroundColor: "#86bceb",
-  },
-  7: {
-    backgroundColor: "#a0bcdd",
-  },
-  8: {
-    backgroundColor: "#c0cbde",
-  },
-  9: {
+  3: {
     backgroundColor: "#e0e1de",
   },
 };
@@ -261,6 +246,7 @@ const FlexContainer = styled.div(
 const ContentWrapper = styled.div({
   margin: "auto",
   display: "flex",
+  alignItems: "center",
 });
 
 const Button = styled.button`

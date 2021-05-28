@@ -12,25 +12,23 @@ import { ReportContext } from "../../../authenticated-app";
 
 const Compare = (props) => {
   const type = props.type;
-  const { file_1 } = useContext(ReportContext);
+  const contextData = useContext(ReportContext);
+  const file_1 = contextData["file_1_Pacific Life"];
   const chartData1 = [
     {
       name: "Nov",
       areaV: file_1.IND_sub_ts4[0],
       lineV: file_1.PL_sub_ts4[0],
-      yAxis: 0,
     },
     {
       name: "Dec",
       areaV: file_1.IND_sub_ts3[0],
       lineV: file_1.PL_sub_ts3[0],
-      yAxis: 1000,
     },
     {
       name: "Jan",
       areaV: file_1.IND_sub_ts2[0],
       lineV: file_1.PL_sub_ts2[0],
-      yAxis: 2000,
     },
     {
       name: "Feb",
@@ -38,13 +36,11 @@ const Compare = (props) => {
       areaDashV: file_1.IND_sub_ts1[0],
       lineV: file_1.PL_sub_ts1[0],
       lineDashV: file_1.PL_sub_ts1[0],
-      yAxis: 3000,
     },
     {
       name: "Mar",
       areaDashV: file_1.IND_sub_pred[0],
       lineDashV: file_1.PL_sub_pred[0],
-      yAxis: 4000,
     },
   ];
   const chartData2 = [
@@ -58,13 +54,11 @@ const Compare = (props) => {
       name: "Dec",
       areaV: file_1.IND_subprem_ts3[0],
       lineV: file_1.PL_subprem_ts3[0],
-      yAxis: 15000000,
     },
     {
       name: "Jan",
       areaV: file_1.IND_subprem_ts2[0],
       lineV: file_1.PL_subprem_ts2[0],
-      yAxis: 30000000,
     },
     {
       name: "Feb",
@@ -72,13 +66,11 @@ const Compare = (props) => {
       areaDashV: file_1.IND_subprem_ts1[0],
       lineV: file_1.PL_subprem_ts1[0],
       lineDashV: file_1.PL_subprem_ts1[0],
-      yAxis: 45000000,
     },
     {
       name: "Mar",
       areaDashV: file_1.IND_subprem_pred[0],
       lineDashV: file_1.PL_subprem_pred[0],
-      yAxis: 60000000,
     },
   ];
   return (
@@ -101,7 +93,7 @@ const Compare = (props) => {
         >
           <CartesianGrid vertical={false} stroke='#f4f4f4' />
           <XAxis dataKey='name' />
-          <YAxis dataKey='yAxis' width={70} />
+          <YAxis width={70} />
           <Area
             type='linear'
             dataKey='lineV'

@@ -3,7 +3,7 @@ import React from "react";
 import { FlexContainer } from "../../styled/styled.lib";
 import LeftSide from "./LeftSide";
 import RightSide from "./RightSide";
-import { title, subTitle, value, percent, keys, gaps } from "../../fakeData";
+import { title, subTitle } from "../../fakeData";
 import Project from "./Project";
 import Container from "../../shared/Container";
 
@@ -14,12 +14,7 @@ const Projection = (props) => {
       {type === "paid" ? (
         <FlexContainer column txtCenter type='paid' className='mt-5'>
           <h3>{title[type]}</h3>
-          <Project
-            title={subTitle[type]}
-            value={value[type]}
-            percent={percent[type]}
-            type={type}
-          />
+          <Project title={subTitle[type]} type={type} />
           <a href='/' className='link-style mt-2 mb-4'>
             Show Details
           </a>
@@ -33,13 +28,8 @@ const Projection = (props) => {
             </a>
           </FlexContainer>
           <Container>
-            <LeftSide
-              title={subTitle[type]}
-              value={value[type]}
-              percent={percent[type]}
-              type={type}
-            />
-            <RightSide keys={keys[type]} gaps={gaps[type]} type={type} />
+            <LeftSide title={subTitle[type]} type={type} />
+            <RightSide type={type} />
           </Container>
         </>
       )}

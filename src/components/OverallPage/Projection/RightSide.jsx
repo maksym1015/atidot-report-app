@@ -17,49 +17,38 @@ import {
 import { ReportContext } from "../../../authenticated-app";
 import { convertCurrency } from "../../../utils";
 
-const COLORS = [
-  "#265b85",
-  "#295b99",
-  "#3177af",
-  "#3384af",
-  "#43bcea",
-  "#66bcea",
-  "#86bceb",
-  "#a0bcdd",
-  "#c0cbde",
-  "#e0e1de",
-];
+const COLORS = ["#265b85", "#3384af", "#66bcea", "#e0e1de"];
 
 const Predictive = (props) => {
   const type = props.type;
-  const { file_1, file_2 } = useContext(ReportContext);
+  const contextData = useContext(ReportContext);
+  const file_1 = contextData["file_1_Pacific Life"];
+  const file_2 = contextData["file_2_Pacific Life"];
   let gapSub = null,
+    totalKeys = [],
+    totalGaps = [],
     keys = [],
     gaps = [],
     gapPercent = [];
 
+  for (const item of Object.entries(file_2["%gap_total"])) {
+    gapPercent.push(Math.abs(item[1] * 100));
+  }
+  for (const item of Object.entries(file_2.title)) {
+    let arr = item[1].split(":");
+    totalKeys.push(arr[0]);
+    totalGaps.push(arr[1]);
+  }
   switch (type) {
     case "application":
-      gapSub = file_1.gap_sub_INDtoPL[0];
-      for (const item of Object.entries(file_2.title)) {
-        let arr = item[1].split(":");
-        keys.push(arr[0]);
-        gaps.push(arr[1]);
-      }
-      for (const item of Object.entries(file_2["%gap_total"])) {
-        gapPercent.push(Math.abs(item[1] * 100));
-      }
+      gapSub = convertCurrency(file_1.gap_sub_INDtoPL[0]);
+      keys.push(totalKeys[0], totalKeys[1], totalKeys[2], totalKeys[3]);
+      gaps.push(totalGaps[0], totalGaps[1], totalGaps[2], totalGaps[3]);
       break;
     case "premium":
       gapSub = convertCurrency(file_1.gap_subprem_INDtoPL[0]);
-      for (const item of Object.entries(file_2.title)) {
-        let arr = item[1].split(":");
-        keys.push(arr[0]);
-        gaps.push(arr[1]);
-      }
-      for (const item of Object.entries(file_2["%gap_total"])) {
-        gapPercent.push(Math.abs(item[1] * 100));
-      }
+      keys.push(totalKeys[4], totalKeys[5], totalKeys[6], totalKeys[7]);
+      gaps.push(totalGaps[4], totalGaps[5], totalGaps[6], totalGaps[7]);
       break;
     default:
       break;
@@ -68,43 +57,19 @@ const Predictive = (props) => {
   const dataPie = [
     {
       name: "Group A",
-      value: gapPercent[0],
+      value: type === "application" ? gapPercent[0] : gapPercent[4],
     },
     {
       name: "Group B",
-      value: gapPercent[1],
+      value: type === "application" ? gapPercent[1] : gapPercent[5],
     },
     {
       name: "Group C",
-      value: gapPercent[2],
+      value: type === "application" ? gapPercent[2] : gapPercent[6],
     },
     {
       name: "Group D",
-      value: gapPercent[3],
-    },
-    {
-      name: "Group E",
-      value: gapPercent[4],
-    },
-    {
-      name: "Group F",
-      value: gapPercent[5],
-    },
-    {
-      name: "Group G",
-      value: gapPercent[6],
-    },
-    {
-      name: "Group H",
-      value: gapPercent[7],
-    },
-    {
-      name: "Group I",
-      value: gapPercent[8],
-    },
-    {
-      name: "Group J",
-      value: gapPercent[9],
+      value: type === "application" ? gapPercent[3] : gapPercent[7],
     },
   ];
 
@@ -129,7 +94,7 @@ const Predictive = (props) => {
           <ValueHeader size='small'>Impact on gap</ValueHeader>
         </FlexContainer>
         <FlexContainer justify='space-between' align='center'>
-          <ResponsiveContainer width='35%' height={200}>
+          <ResponsiveContainer width='33%' height={190}>
             <PieChart>
               <Pie
                 data={dataPie}
@@ -145,13 +110,13 @@ const Predictive = (props) => {
                   value={gapSub}
                   position='centerBottom'
                   className='label-top'
-                  fill='#f22736'
+                  fill={gapSub.slice(0, 1) === "-" ? "#f22736" : "#47c70e"}
                 />
                 <Label
                   value='Gap'
                   position='centerTop'
                   className='label-bottom'
-                  fill='#f22736'
+                  fill={gapSub.slice(0, 1) === "-" ? "#f22736" : "#47c70e"}
                 />
                 <Tooltip />
               </Pie>

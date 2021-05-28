@@ -18,9 +18,11 @@ import {
   YAxis,
   Cell,
 } from "recharts";
+import { convertCurrency } from "../../utils";
 
 const ChartComponent = (props) => {
   const data = props.chartData;
+  const productType = props.subTitle;
   const CustomizedLabel = ({ x, width, y, value }) => {
     return (
       <text
@@ -32,7 +34,7 @@ const ChartComponent = (props) => {
         textAnchor='middle'
         dominantBaseline='middle'
       >
-        ~{value}
+        {convertCurrency(value)}
       </text>
     );
   };
@@ -53,32 +55,36 @@ const ChartComponent = (props) => {
           </Bar>
         </BarChart>
       </ResponsiveContainer>
-      <FlexContainer justify='space-around' className='w-90'>
-        <FlexContainer align='center' className='current-state-container'>
-          <ContentWrapper>
-            <CurrentStatus
-              size='big'
-              variant={data[0].status}
-              className='mx-2'
-            />
-            <PercentValue color={data[0].status}>
-              {data[0].percent}%
-            </PercentValue>
-          </ContentWrapper>
+      {productType === "Paid Potential" ? (
+        <></>
+      ) : (
+        <FlexContainer justify='space-around' className='w-90'>
+          <FlexContainer align='center' className='current-state-container'>
+            <ContentWrapper>
+              <CurrentStatus
+                size='big'
+                variant={data[0].percent > 0 ? "up" : "down"}
+                className='mx-2'
+              />
+              <PercentValue color={data[0].percent > 0 ? "up" : "down"}>
+                {data[0].percent}%
+              </PercentValue>
+            </ContentWrapper>
+          </FlexContainer>
+          <FlexContainer align='center' className='current-state-container'>
+            <ContentWrapper>
+              <CurrentStatus
+                size='big'
+                variant={data[1].percent > 0 ? "up" : "down"}
+                className='mx-2'
+              />
+              <PercentValue color={data[1].percent > 0 ? "up" : "down"}>
+                {data[1].percent}%
+              </PercentValue>
+            </ContentWrapper>
+          </FlexContainer>
         </FlexContainer>
-        <FlexContainer align='center' className='current-state-container'>
-          <ContentWrapper>
-            <CurrentStatus
-              size='big'
-              variant={data[1].status}
-              className='mx-2'
-            />
-            <PercentValue color={data[1].status}>
-              {data[1].percent}
-            </PercentValue>
-          </ContentWrapper>
-        </FlexContainer>
-      </FlexContainer>
+      )}
     </>
   );
 };
@@ -87,29 +93,26 @@ const CategoryItem = (props) => {
   const category = props.item;
   const product =
     category.type === "chart" ? (
-      <ChartComponent chartData={category.chartData} />
+      <ChartComponent
+        chartData={category.chartData}
+        subTitle={category.subTitle}
+      />
     ) : (
       <>
-        <ResultValue size='big' color='up'>
+        <ResultValue
+          size='big'
+          color={category.value.slice(0, 1) === "-" ? "down" : "up"}
+        >
           {category.value}
         </ResultValue>
         <FlexContainer>
-          <i className='material-icons'>highlight</i>
-          <div>
-            <Text type='comment' className='mt-2 mb-4'>
-              {category.comment}
-              <a href='/' className='link-style'>
-                {category.distributor}
-              </a>
-            </Text>
-            <OutlineButton>Learn More</OutlineButton>
-          </div>
+          <OutlineButton>Learn More</OutlineButton>
         </FlexContainer>
       </>
     );
   return (
     <div className='col-md-3'>
-      <FlexContainer column justify='space-between'>
+      <FlexContainer column justify='space-between' className='h-75'>
         <Text type='title' className='mb-3'>
           {category.subTitle}
         </Text>

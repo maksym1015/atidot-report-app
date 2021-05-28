@@ -3,17 +3,18 @@ import React, { useContext } from "react";
 import BaseComponent from "../components/shared/BaseComponent";
 import PerformanceComponent from "../components/OverallPage/Performance";
 import InsightComponent from "../components/OverallPage/Insights";
-import { Text } from "../components/styled/styled.lib";
 import { ReportContext } from "../authenticated-app";
 
 const Overall = () => {
-  const { file_3 } = useContext(ReportContext);
+  const contextData = useContext(ReportContext);
+  const file_3 = contextData["file_3_Pacific Life"];
   let insights = [],
     topInsights = [],
     industryInsights = [];
-
-  for (const item of Object.entries(file_3.index)) {
-    insights.push(item[1]);
+  if (file_3) {
+    for (const item of Object.entries(file_3.index)) {
+      insights.push(item[1]);
+    }
   }
   for (let i = 1; i <= 6; i++) {
     topInsights.push(insights[i]);
@@ -24,7 +25,6 @@ const Overall = () => {
 
   return (
     <BaseComponent>
-      <Text type='periodT'>Feb' 1 - Mar' 1, 2021</Text>
       <PerformanceComponent />
       <InsightComponent type='Top' value={topInsights} />
       <InsightComponent type='Industry' value={industryInsights} />
